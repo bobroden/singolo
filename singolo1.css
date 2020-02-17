@@ -22,6 +22,7 @@ h1 {
 	color: #fff;
 	line-height: 6px;
 	padding-top: 39px;
+	margin: 2px -2px 0 0;
 }
 .spar {
 	font-size: 2.5rem;
@@ -42,4 +43,5 @@ h1 {
 	font-size: 1.2rem;
 	line-height: 100%;
 	text-decoration: none;
+	margin: -2px -2px 0px -2px;
 }
