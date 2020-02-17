@@ -3,10 +3,11 @@
 	padding: 0;
 	font-size: 10px;
 	font-family: "Lato", sans-serif;
+	max-width: 1020px;
 }
 .wrapper {
-	max-width: 1020px;
 	padding: 0 40px;
+	margin-width: 1020px;
 }
 .header {
 	background: #2d303a;
@@ -44,4 +45,29 @@ h1 {
 	line-height: 100%;
 	text-decoration: none;
 	margin: -2px -2px 0px -2px;
+}
+.slider {
+	height: 600px;
+	background-color: #f06c64;
+	position: relative;
+}
+.left {
+	position: absolute;
+    margin-top: 280px;
+    left: 40px;
+}
+.vertical-phone {
+	position: absolute;
+    top: -16px;
+    left: 110px;
+}
+.horizontal-phone {
+	position: absolute;
+    top: 70px;
+    left: 360px;
+}
+.right {
+	position: absolute;
+	top: 281px;
+    right: 40px;
 }
