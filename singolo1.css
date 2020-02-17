@@ -32,11 +32,11 @@ h1 {
 .navigation {
 	display: flex;
 	float: right;
-    flex-direction: row;
-  	justify-content: space-between;
-    align-items: stretch;
-    height: 100%;
-    width: 370px;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: stretch;
+	height: 100%;
+	width: 370px;
 }
 .navigation a {
 	color: #fff;
@@ -53,21 +53,21 @@ h1 {
 }
 .left {
 	position: absolute;
-    margin-top: 280px;
-    left: 40px;
+	margin-top: 280px;
+	left: 40px;
 }
 .vertical-phone {
 	position: absolute;
-    top: -16px;
-    left: 110px;
+	top: -16px;
+	left: 110px;
 }
 .horizontal-phone {
 	position: absolute;
-    top: 70px;
-    left: 360px;
+	top: 70px;
+	left: 360px;
 }
 .right {
 	position: absolute;
 	top: 281px;
-    right: 40px;
+	right: 40px;
 }
