@@ -50,6 +50,7 @@ h1 {
 	height: 600px;
 	background-color: #f06c64;
 	position: relative;
+	border-bottom: solid 1px #ea676b;
 }
 .left {
 	position: absolute;
@@ -70,4 +71,23 @@ h1 {
 	position: absolute;
 	top: 281px;
 	right: 40px;
+}
+.services {
+	background-color: #f2f2f2;
+	height: 495px;
+	border-bottom: solid 6px #fff;
+}
+.services h2 {
+	padding-top: 67px;
+	font-size: 3rem;
+	line-height: 18px;
+	color: #666d89;
+	font-weight: 900;
+	margin-bottom: 27px;
+}
+.services p {
+	font-size: 1.8rem;
+	line-height: 30px;
+	color: #767e9e;
+	font-weight: 300;
 }
