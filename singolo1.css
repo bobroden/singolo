@@ -12,7 +12,7 @@
 .header {
 	background: #2d303a;
 	height: 90px;
-	width: 1020px;
+	max-width: 1020px;
 	border-bottom: solid 5px #323746;
 	vertical-align: center;
 }
