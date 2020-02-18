@@ -1,3 +1,8 @@
+@font-face
+ {
+  font-family: Lato;
+  src: url("assets/Lato-Black.ttf Lato-Bold.ttf Lato-Light.ttf Lato-Regular.ttf Lato-Thin.ttf");
+ }
 * {
 	margin: 0;
 	padding: 0;
@@ -22,7 +27,7 @@ h1 {
 	letter-spacing: -0.5px;
 	color: #fff;
 	line-height: 6px;
-	padding-top: 39px;
+	padding-top: 40px;
 	margin: 2px -2px 0 0;
 }
 .spar {
@@ -44,7 +49,13 @@ h1 {
 	font-size: 1.2rem;
 	line-height: 100%;
 	text-decoration: none;
-	margin: -2px -2px 0px -2px;
+	margin: -1px -2px 0px -2px;
+}
+.navigation a:hover {
+	color: #F06C64;
+}
+.navigation a:first-child {
+	color: #F06C64;
 }
 .slider {
 	height: 600px;
@@ -56,6 +67,13 @@ h1 {
 	position: absolute;
 	margin-top: 280px;
 	left: 40px;
+}
+.left:active {
+	width: 24px;
+	height: 40px;
+}
+.left:hover {
+	cursor: pointer;
 }
 .vertical-phone {
 	position: absolute;
@@ -72,6 +90,13 @@ h1 {
 	top: 281px;
 	right: 40px;
 }
+.right:active {
+	width: 24px;
+	height: 40px;
+}
+.right:hover {
+	cursor: pointer;
+}
 .services {
 	background-color: #f2f2f2;
 	height: 495px;
@@ -85,9 +110,42 @@ h1 {
 	font-weight: 900;
 	margin-bottom: 27px;
 }
-.services p {
+.description p {
 	font-size: 1.8rem;
 	line-height: 30px;
 	color: #767e9e;
 	font-weight: 300;
+	text-align: justify;
+}
+.layout-3-colums {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 35px; 
+	margin-top: 12px;
+}
+.colums {
+	width: 300px;
+	height: 87px;
+	margin-bottom: 36px;
+}
+.colums img {
+	float: left;
+	margin-right: 18px;
+}
+.colums h3 {
+	font-size: 1.8rem;
+	line-height: 18px;
+	color: #666d89;
+	font-weight: 900;
+}
+.colums p {
+	margin-top: 8px;
+	font-size: 1.2rem;
+	line-height: 22px;
+	color: #767e9e;
+	font-weight: 400;
+	overflow: hidden;
+	text-align: justify;
 }
