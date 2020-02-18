@@ -46,6 +46,12 @@ h1 {
 	text-decoration: none;
 	margin: -1px -2px 0px -2px;
 }
+.navigation span {
+	color: #494E62;
+	font-size: 1.2rem;
+	line-height: 6px;
+	margin-top: 1px;
+}
 .navigation a:hover {
 	color: #F06C64;
 }
@@ -60,15 +66,20 @@ h1 {
 }
 .left {
 	position: absolute;
-	margin-top: 280px;
+	top: 280px;
 	left: 40px;
 }
-.left:active {
+.slide:active {
 	width: 24px;
 	height: 40px;
+	top: 277px;
 }
-.left:hover {
+.slide:hover {
 	cursor: pointer;
+	background: #b3b1b1;
+	border-radius: 3px;
+	border: solid #b3b1b1 3px;
+	top: 277px;
 }
 .vertical-phone {
 	position: absolute;
@@ -82,15 +93,8 @@ h1 {
 }
 .right {
 	position: absolute;
-	top: 281px;
+	top: 280px;
 	right: 40px;
-}
-.right:active {
-	width: 24px;
-	height: 40px;
-}
-.right:hover {
-	cursor: pointer;
 }
 .services {
 	background-color: #f2f2f2;
@@ -122,8 +126,8 @@ h1 {
 }
 .colums {
 	width: 32%;
-	height: 87px;
-	margin-bottom: 36px;
+	height: 20%;
+	margin-bottom: 31px;
 }
 .colums img {
 	float: left;
