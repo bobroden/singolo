@@ -67,7 +67,12 @@ font-weight: 100;
 	line-height: 20px;
 	border-radius: 5px;
 	margin: 11px 7px 0 0;
-	padding: 0 7px;
+	padding: 0 6.6px;
+	cursor: pointer;
+}
+.up-text button:hover {
+	border: solid 1px #DEDEDE;
+	color: #DEDEDE;
 }
 .layout-4-colums {
 	display: flex;
