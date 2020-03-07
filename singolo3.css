@@ -1,0 +1,77 @@
+@font-face { 
+font-family: "Lato";  
+src: url("assets/Lato-Black.ttf") format("truetype"); 
+font-style: normal; 
+font-weight: 900; 
+}
+@font-face { 
+font-family: "Lato";  
+src: url("assets/Lato-Bold.ttf") format("truetype"); 
+font-style: normal; 
+font-weight: 700; 
+}
+@font-face { 
+font-family: "Lato";  
+src: url("assets/Lato-Light.ttf") format("truetype"); 
+font-style: normal; 
+font-weight: 300; 
+}
+@font-face { 
+font-family: "Lato";  
+src: url("assets/Lato-Regular.ttf") format("truetype"); 
+font-style: normal; 
+font-weight: 400; 
+}
+@font-face { 
+font-family: "Lato";  
+src: url("assets/Lato-Thin.ttf") format("truetype"); 
+font-style: normal; 
+font-weight: 100; 
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 10px;
+	font-family: "Lato";
+}
+.wrapper {
+	max-width: 940px;
+	padding: 0 40px;
+}
+.get {
+	background-color: #f06c64;
+	padding-top: 66px;
+}
+.get-a-quote h2 {
+	font-size: 3rem;
+	line-height: 18px;
+	color: #f0d8d9;
+	font-weight: 900;
+	margin-bottom: 27px;
+}
+.description {
+	font-size: 1.8rem;
+	line-height: 30px;
+	color: #f0d8d9;
+	font-weight: 300;
+	margin-bottom: 45px;
+	text-align: justify;
+}
+.forms {
+	display: flex;
+	justify-content: space-between;
+}
+input, textarea {
+	width: 610px;
+	height: 28px;
+	border-radius: 5px;
+	background-color: #d6564f;
+	margin-bottom: 15px;
+	border: 0;
+	padding: 5px;
+}
+textarea {
+	height: 194px;
+	resize: none;
+}
