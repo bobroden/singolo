@@ -177,6 +177,7 @@ h1 {
 	font-weight: 400;
 	overflow: hidden;
 	text-align: justify;
+	height: 66px;
 }
 .portfolio {
 	background: #2D303A;
