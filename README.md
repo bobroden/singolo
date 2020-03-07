@@ -1,1 +1,1 @@
-https://bobroden.github.io/singolo/index.html
+https://bobroden.github.io/singolo/
