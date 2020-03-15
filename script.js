@@ -1,4 +1,4 @@
-var navigation = document.querySelectorAll('body > header > div > nav > a');
+var navigation = document.querySelectorAll('body > header > nav > a');
 var verTel = document.getElementsByClassName('vertel');
 var horTel = document.getElementsByClassName('hortel');
 var buttons = document.querySelectorAll('#Portfolio > div > div > button');
