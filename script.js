@@ -7,18 +7,24 @@ var colums = document.getElementsByClassName('colum');
 var send = document.getElementById('submit');
 var close = document.getElementById('close');
 var msgbox = document.getElementsByClassName('message-block')[0];
-
+var Y = window.scrollY;
+var sect = document.querySelectorAll('main > section');
 
 // navigation
 
-for (let i = 0; i < navigation.length; i++) {
-  navigation[i].addEventListener('click', function() {
-    for (let i = 0; i < navigation.length; i++) {
-      navigation[i].classList.remove('active');
+document.addEventListener('scroll', () => {
+  var Y = window.scrollY;
+  for(var i = 0; i < sect.length; i++) {
+    if((sect[i].offsetTop - 95) <= Y && ((sect[i].offsetTop - 95) + sect[i].offsetHeight) > Y) {
+      for(var j = 0; j < navigation.length; j++) {
+        navigation[j].classList.remove('active_nav');
+        if(sect[i].getAttribute('id') === navigation[j].getAttribute('href').substring(1)) {
+          navigation[j].classList.add('active_nav');
+        }
+      }
     }
-    this.classList.add('active');
-  })
-}
+  }
+})
 
 // slider
 
@@ -117,10 +123,9 @@ for (let i = 0; i < buttons.length; i++) {
 for (let i = 0; i < colums.length; i++) {
   colums[i].addEventListener('click', function() {
     for (let i = 0; i < colums.length; i++) {
-      colums[i].style.border = "5px #2D303A solid";
-      //colums[i].style.border = 0;
+      colums[i].style.outline = 'none';
     }
-    this.style.border = '5px #F06C64 solid';
+    this.style.outline = '5px #F06C64 solid';
   })
 }
 
@@ -135,8 +140,9 @@ send.addEventListener('click', function() {
 		describe = 'Без описания';
 	document.getElementById('subject2').innerText = subject;
 	document.getElementById('describe2').innerText = describe;
-	if(document.getElementById('form').checkValidity())
+	if(document.getElementById('form').checkValidity()) {
 		msgbox.style.display = 'block';
+  }
 })
 
 close.addEventListener('click', function() {

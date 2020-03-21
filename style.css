@@ -1,49 +1,23 @@
-@font-face { 
-	font-family: "Lato";  
-	src: url("assets/Lato-Black.ttf") format("truetype"); 
-	font-style: normal; 
-	font-weight: 900; 
-}
-@font-face { 
-	font-family: "Lato";  
-	src: url("assets/Lato-Bold.ttf") format("truetype"); 
-	font-style: normal; 
-	font-weight: 700;
-}
-@font-face { 
-	font-family: "Lato";  
-	src: url("assets/Lato-Light.ttf") format("truetype"); 
-	font-style: normal; 
-	font-weight: 300; 
-}
-@font-face { 
-	font-family: "Lato";  
-	src: url("assets/Lato-Regular.ttf") format("truetype"); 
-	font-style: normal; 
-	font-weight: 400; 
-}
-@font-face { 
-	font-family: "Lato";  
-	src: url("assets/Lato-Thin.ttf") format("truetype"); 
-	font-style: normal; 
-	font-weight: 100; 
-}
-
 * {
 	margin: 0;
 	padding: 0;
 	font-size: 10px;
 	font-family: "Lato", sans-serif;
-	max-width: 1020px;
+	scroll-behavior: smooth;
 }
 .wrapper {
 	padding: 0 40px;
-	max-width: 1020px;
+	width: 940px;
+	margin: 0 auto;
 }
 .header {
+	z-index: 3;
+	position: fixed;
+	left: calc(50% - 510px);
+	padding: 0 40px;
 	background: #2d303a;
 	height: 90px;
-	max-width: 1020px;
+	width: 940px;
 	border-bottom: solid 5px #323746;
 	vertical-align: center;
 }
@@ -75,7 +49,7 @@ h1 {
 	font-size: 1.2rem;
 	line-height: 100%;
 	text-decoration: none;
-	margin: -1px -2px 0px -2px;
+	margin: -3px -2px 0px -2px;
 }
 .navigation span {
 	color: #494E62;
@@ -86,13 +60,15 @@ h1 {
 .navigation a:hover {
 	color: #F06C64;
 }
-.navigation a:first-child {
+a.active_nav {
 	color: #F06C64;
 }
 .navigation .active {
 	color: #F06C64;
 }
 .slider {
+	position: relative;
+	padding-top: 95px;
 	height: 595px;
 	background-color: #f06c64;
 	max-width: 1020px;
@@ -103,7 +79,7 @@ h1 {
 }
 .left {
 	position: absolute;
-	top: 379px;
+	top: 377px;
 	left: 42px;
 	z-index: 1;
 }
@@ -165,7 +141,7 @@ h1 {
 }
 .right {
 	position: absolute;
-	top: 378px;
+	top: 377px;
 	left: 964px;
 	z-index: 1;
 }
@@ -203,6 +179,8 @@ h1 {
     }
 }
 .services {
+	padding-top: 95px;
+	margin-top: -95px;
 	background-color: #f2f2f2;
 	height: 493px;
 	border-bottom: solid 6px #fff;
@@ -254,6 +232,10 @@ h1 {
 	text-align: justify;
 	height: 66px;
 }
+.Portfolio {
+	padding-top: 95px;
+	margin-top: -95px;
+}
 .portfolio {
 	background: #2D303A;
 	max-height: 870px;
@@ -297,9 +279,8 @@ h1 {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	overflow: hidden;
-	height: 645px;
-	margin-bottom: 42px;
+	height: 622px;
+	margin-bottom: 65px;
 }
 .colum {
 	position: relative;
@@ -308,8 +289,14 @@ h1 {
 	background: red;
 	margin-top: 18px;
 	background: #464B5E;
-	border: 5px solid #2D303A;
 	cursor: pointer;
+}
+.colum:nth-child(1n + 13) {
+	display: none;
+}
+.About-us {
+	padding-top: 95px;
+	margin-top: -95px;
 }
 .about-us {
 	padding-top: 68px;
