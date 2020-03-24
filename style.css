@@ -553,6 +553,9 @@ input::placeholder, textarea::placeholder {
 		top: 54px;
 		right: 17px;
 	}
+	.vertel, .hortel {
+		display: none;
+	}
 	.slider {
 		padding-top: 95px;
 		height: 58vw;
@@ -579,18 +582,6 @@ input::placeholder, textarea::placeholder {
 	}
 	.navigation a {
 		margin-top: -5px;
-	}
-	.vertel {
-	    width: 24%;
-	    height: 45vw;
-	    top: 41px;
-	    left: 44px;
-	}
-	.black1 {
-	    top: 90px;
-	    left: 55px;
-	    width: calc(21% - 1px);
-	    height: 33vw;
 	}
 	.left-phone {
 		width: 17%;
