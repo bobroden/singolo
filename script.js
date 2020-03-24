@@ -28,49 +28,66 @@ document.addEventListener('scroll', () => {
 
 // slider
 
-var slideIndex = 1;
-showSlides(slideIndex);
+let items = document.getElementsByClassName("slide1");
+let currentItem = 0;
+let isEnabled = true;
 
-function plusSlide() {
-    showSlides(slideIndex += 1);
+function changeCurrentItem(n) {
+  currentItem = (n + items.length) % items.length;
+  if(currentItem === 0) {
+    document.getElementsByClassName('slider')[0].style.background = '#f06c64'
+    document.getElementsByClassName('slider')[0].style.borderBottom = '#ea676b 6px solid'
+  }
+  else {
+    document.getElementsByClassName('slider')[0].style.background = '#648BF0'
+    document.getElementsByClassName('slider')[0].style.borderBottom = '#8BAAF8 6px solid'
+  }
 }
 
-function minusSlide() {
-    showSlides(slideIndex -= 1);  
+function hideItem(direction) {
+  isEnabled = false;
+  items[currentItem].classList.add(direction);
+  items[currentItem].addEventListener('animationend', function () {
+    this.classList.remove('slide__active', direction);
+  });
 }
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+function showItem(direction) {
+  items[currentItem].classList.add('next', direction);
+  items[currentItem].addEventListener('animationend', function () {
+    this.classList.remove('next', direction);
+    this.classList.add('slide__active');
+    isEnabled = true;
+  });
 }
 
-function showSlides(n) {
-    var slides = document.getElementsByClassName("item");
-    if (n > slides.length) {
-      slideIndex = 1
-    }
-    if (n < 1) {
-        slideIndex = slides.length
-    }
-    if(slideIndex === 1) {
-      document.getElementsByClassName('slider')[0].style.background = '#f06c64'
-      document.getElementsByClassName('slider')[0].style.borderBottom = '#ea676b 6px solid'
-    }
-    else {
-      document.getElementsByClassName('slider')[0].style.background = '#648BF0'
-      document.getElementsByClassName('slider')[0].style.borderBottom = '#8BAAF8 6px solid'
-    }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex - 1].style.display = "block";
+function nextItem(n) {
+  hideItem('toleft');
+  changeCurrentItem(n + 1);
+  showItem('fromright');
 }
 
-document.getElementsByClassName('right')[0].addEventListener('click', () => {
-  plusSlide();
+function previousItem(n) {
+  hideItem('toright');
+  changeCurrentItem(n - 1);
+  showItem('fromleft');
+}
+
+const leftArrow = document.getElementsByClassName('left')[0];
+const rightArrow = document.getElementsByClassName('right')[0];
+
+leftArrow.addEventListener('click', function () {
+  if (isEnabled) {
+    previousItem(currentItem);
+  }
 });
-document.getElementsByClassName('left')[0].addEventListener('click', () => {
-  minusSlide();
+
+rightArrow.addEventListener('click', function () {
+  if (isEnabled) {
+    nextItem(currentItem);
+  }
 });
+
 
 // phones
 
