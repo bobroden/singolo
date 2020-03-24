@@ -28,49 +28,66 @@ document.addEventListener('scroll', () => {
 
 // slider
 
-var slideIndex = 1;
-showSlides(slideIndex);
+let items = document.getElementsByClassName("slide1");
+let currentItem = 0;
+let isEnabled = true;
 
-function plusSlide() {
-    showSlides(slideIndex += 1);
+function changeCurrentItem(n) {
+  currentItem = (n + items.length) % items.length;
+  if(currentItem === 0) {
+    document.getElementsByClassName('slider')[0].style.background = '#f06c64'
+    document.getElementsByClassName('slider')[0].style.borderBottom = '#ea676b 6px solid'
+  }
+  else {
+    document.getElementsByClassName('slider')[0].style.background = '#648BF0'
+    document.getElementsByClassName('slider')[0].style.borderBottom = '#8BAAF8 6px solid'
+  }
 }
 
-function minusSlide() {
-    showSlides(slideIndex -= 1);  
+function hideItem(direction) {
+  isEnabled = false;
+  items[currentItem].classList.add(direction);
+  items[currentItem].addEventListener('animationend', function () {
+    this.classList.remove('slide__active', direction);
+  });
 }
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+function showItem(direction) {
+  items[currentItem].classList.add('next', direction);
+  items[currentItem].addEventListener('animationend', function () {
+    this.classList.remove('next', direction);
+    this.classList.add('slide__active');
+    isEnabled = true;
+  });
 }
 
-function showSlides(n) {
-    var slides = document.getElementsByClassName("item");
-    if (n > slides.length) {
-      slideIndex = 1
-    }
-    if (n < 1) {
-        slideIndex = slides.length
-    }
-    if(slideIndex === 1) {
-    	document.getElementsByClassName('slider')[0].style.background = '#f06c64'
-    	document.getElementsByClassName('slider')[0].style.borderBottom = '#ea676b 6px solid'
-    }
-    else {
-    	document.getElementsByClassName('slider')[0].style.background = '#648BF0'
-    	document.getElementsByClassName('slider')[0].style.borderBottom = '#8BAAF8 6px solid'
-    }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex - 1].style.display = "block";
+function nextItem(n) {
+  hideItem('toleft');
+  changeCurrentItem(n + 1);
+  showItem('fromright');
 }
 
-document.getElementsByClassName('right')[0].addEventListener('click', () => {
-	plusSlide();
+function previousItem(n) {
+  hideItem('toright');
+  changeCurrentItem(n - 1);
+  showItem('fromleft');
+}
+
+const leftArrow = document.getElementsByClassName('left')[0];
+const rightArrow = document.getElementsByClassName('right')[0];
+
+leftArrow.addEventListener('click', function () {
+  if (isEnabled) {
+    previousItem(currentItem);
+  }
 });
-document.getElementsByClassName('left')[0].addEventListener('click', () => {
-	minusSlide();
+
+rightArrow.addEventListener('click', function () {
+  if (isEnabled) {
+    nextItem(currentItem);
+  }
 });
+
 
 // phones
 
@@ -78,25 +95,25 @@ var vt = 0;
 var ht = 0;
 
 verTel[0].addEventListener('click', function() {
-	if(vt === 0) {
-		document.getElementsByClassName('black1')[0].style.display = 'block';
-		vt++;
-	}
-	else {
-		document.getElementsByClassName('black1')[0].style.display = 'none';
-		vt--;
-	}
+  if(vt === 0) {
+    document.getElementsByClassName('black1')[0].style.display = 'block';
+    vt++;
+  }
+  else {
+    document.getElementsByClassName('black1')[0].style.display = 'none';
+    vt--;
+  }
 });
 
 horTel[0].addEventListener('click', function() {
-	if(ht === 0) {
-		document.getElementsByClassName('black2')[0].style.display = 'block';
-		ht++;
-	}
-	else {
-		document.getElementsByClassName('black2')[0].style.display = 'none';
-		ht--;
-	}
+  if(ht === 0) {
+    document.getElementsByClassName('black2')[0].style.display = 'block';
+    ht++;
+  }
+  else {
+    document.getElementsByClassName('black2')[0].style.display = 'none';
+    ht--;
+  }
 });
 
 // mix in Portfolio
@@ -110,10 +127,10 @@ for (let i = 0; i < buttons.length; i++) {
     }
     this.classList.add('active2');
     for(let i = 0; i < imgs.length; i++) {
-    	let rand = Math.floor(Math.random() * imgs.length);
-    	imgs[i].parentNode.replaceChild(elem , imgs[i]);
-    	i != rand && imgs[rand].parentNode.replaceChild(imgs[i], imgs[rand]);
-    	elem.parentNode.replaceChild(imgs[rand], elem);
+      let rand = Math.floor(Math.random() * imgs.length);
+      imgs[i].parentNode.replaceChild(elem , imgs[i]);
+      i != rand && imgs[rand].parentNode.replaceChild(imgs[i], imgs[rand]);
+      elem.parentNode.replaceChild(imgs[rand], elem);
     }
   })
 }
@@ -132,23 +149,23 @@ for (let i = 0; i < colums.length; i++) {
 // form
 
 send.addEventListener('click', function() {
-	let subject = document.getElementById('subject').value.toString();
-	let describe = document.getElementById('describe').value.toString();
-	if(subject === '' || subject === ' ')
-		subject = 'Без темы';
-	if(describe === '' || describe === ' ')
-		describe = 'Без описания';
-	document.getElementById('subject2').innerText = subject;
-	document.getElementById('describe2').innerText = describe;
-	if(document.getElementById('form').checkValidity()) {
-		msgbox.style.display = 'block';
+  let subject = document.getElementById('subject').value.toString();
+  let describe = document.getElementById('describe').value.toString();
+  if(subject === '' || subject === ' ')
+    subject = 'Без темы';
+  if(describe === '' || describe === ' ')
+    describe = 'Без описания';
+  document.getElementById('subject2').innerText = subject;
+  document.getElementById('describe2').innerText = describe;
+  if(document.getElementById('form').checkValidity()) {
+    msgbox.style.display = 'block';
   }
 })
 
 close.addEventListener('click', function() {
-	msgbox.style.display = 'none';
-	document.getElementById('name').value = '';
-	document.getElementById('email').value = '';
-	document.getElementById('subject').value = '';
-	document.getElementById('describe').value = '';
+  msgbox.style.display = 'none';
+  document.getElementById('name').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('subject').value = '';
+  document.getElementById('describe').value = '';
 })
