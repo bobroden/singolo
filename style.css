@@ -553,7 +553,7 @@ input::placeholder, textarea::placeholder {
 		top: 54px;
 		right: 17px;
 	}
-	.vertel, .hortel {
+	.vertel, .hortel, .black1, .black2 {
 		display: none;
 	}
 	.slider {
