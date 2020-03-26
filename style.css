@@ -801,7 +801,7 @@ input::placeholder, textarea::placeholder {
     	border-bottom: 0;
 	}
 	.services h2 {
-    	padding-top: 36px;
+    	padding-top: 29px;
 	}
 	.layout-3-colums {
 	    margin-top: -16px;
@@ -837,6 +837,7 @@ input::placeholder, textarea::placeholder {
 	}
 	.layout-4-colums {
 		height: 155vw;
+		margin-bottom: 0;
 	}
 	.colum:nth-child(1n + 9) {
 		display: none;
@@ -846,7 +847,8 @@ input::placeholder, textarea::placeholder {
 		height: 100%;
 	}
 	.up-text {
-    	height: 212vw;
+    	height: auto;
+    	padding-bottom: 11vw;
 	}
 	.about-us {
 	    padding-top: 41px;
@@ -858,13 +860,15 @@ input::placeholder, textarea::placeholder {
 	    margin-bottom: 0px;
 	}
 	.column {
+		margin: 0 auto;
 		margin-bottom: 29px;
+		max-width: 350px;
 	}
 	.column img:first-child {
 		width: 104%;
 	}
 	.column h3 {
-	    margin-top: 19px;
+	    margin-top: 12px;
 	}
 	.column p {
 	    margin-top: 2px;
@@ -873,7 +877,7 @@ input::placeholder, textarea::placeholder {
 		margin-top: 12px;
 	}
 	.get {
-	    padding-top: 53px;
+	    padding-top: 56px;
 	    padding-bottom: 41px;
 	    border-bottom: 0;
 	}
@@ -888,12 +892,16 @@ input::placeholder, textarea::placeholder {
 	    margin-bottom: 23px;
 	}
 	input, textarea {
-	    width: 105%;
+	    width: 104%;
 	    margin-bottom: 12px;
 	    padding: 4px 5px;
 	}
 	textarea {
 	    height: 151px;
+	}
+	.but {
+		margin: 0 auto;
+		width: 106%;
 	}
 	.get-a-quote {
 		padding-top: 70px;
@@ -920,8 +928,12 @@ input::placeholder, textarea::placeholder {
 		display: none;
 	}
 }
-@media (max-width: 767px) {
+@media (max-width: 374px) {
 	.up-text {
-	    height: 231vw;
+	    height: auto;
+	    padding-bottom: 11vw;
+	}
+	.but {
+		width: 109%;
 	}
 }
