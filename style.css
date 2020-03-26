@@ -22,6 +22,9 @@
 	border-bottom: solid 5px #323746;
 	vertical-align: center;
 }
+.burger {
+	display: none;
+}
 h1 {
 	font-size: 2.5rem;
 	font-weight: bold;
@@ -79,7 +82,7 @@ a.active_nav {
 .slide1 {
 	display: none;
 	position: relative;
-	animation: 0.7s;
+	animation: 0.5s;
 }
 .left {
 	position: absolute;
@@ -142,6 +145,9 @@ a.active_nav {
 	width: 333px;
 	top: 188px;
 	right: 162px;
+}
+div.block {
+	display: block;
 }
 .right {
 	position: absolute;
@@ -274,7 +280,7 @@ a.active_nav {
 }
 .portfolio {
 	background: #2D303A;
-	height: 870px;
+	height: 793px;
 	padding-top: 68px;
 	border-bottom: solid 6px #323746;
 }
@@ -470,7 +476,7 @@ input::placeholder, textarea::placeholder {
 .message {
 	position: absolute;
 	top: 50%;
-	left: 50%;
+	left: calc(50% - 89px);
 }
 .message p, .message span, .message h4 {
 	font-size: 1.6rem;
@@ -536,7 +542,7 @@ input::placeholder, textarea::placeholder {
 	cursor: pointer;
 	margin-top: -10px;
 }
-@media (max-width: 1020px) and (min-width: 768px){
+@media (max-width: 1019px) and (min-width: 768px){
 	.wrapper {
 		padding-left: 24px;
 	}
@@ -553,7 +559,7 @@ input::placeholder, textarea::placeholder {
 		top: 54px;
 		right: 17px;
 	}
-	.vertel, .hortel, .black1, .black2 {
+	div.vertel, div.hortel, div.black1, div.black2 {
 		display: none;
 	}
 	.slider {
@@ -615,7 +621,7 @@ input::placeholder, textarea::placeholder {
 	}
 	.portfolio {
 		padding-top: 9vw;
-		padding-bottom: 20vw;
+		padding-bottom: 30vw;
 	}
 	.up-text button {
 		margin-top: 43px;
@@ -669,5 +675,253 @@ input::placeholder, textarea::placeholder {
 	}
 	textarea {
 		height: 149px;
+	}
+}
+@media (max-width: 767px) {
+	.wrapper {
+		padding: 0 25px;
+	}
+	.header{
+		display: flex;
+		justify-content: center;
+		padding: 0 12px;
+		height: 75px;
+		border-bottom: 0;
+	}
+	.nav-first {
+		display: none;
+	}
+	.burger {
+		position: fixed;
+		display: flex;
+		width: 25px;
+		height: 20px;
+		top: 32px;
+		left: 12px;
+		cursor: pointer;
+		transition: transform 0.3s, top 0.3s;
+	}
+	.transform {
+		transform: rotate(90deg);
+	}
+	.header h1 {
+		display: inline-block;
+		margin: 0 auto;
+		padding-left: 15px;
+		padding-top: 40px;
+		font-size: 2rem;
+	}
+	.spar {
+		font-size: 2rem;
+	}
+	.msg-active {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		background: #0008;
+		z-index: 10;
+	}
+	.nav-active {
+		position: fixed;
+		display: block;
+		top: 232px;
+		left: 15px;
+		padding-left: 70px;
+	}
+	.msgh-active {
+		position: fixed;
+		width: 278px;
+		height: 100vh;
+		background: #2D303A;
+	}
+	a.aside {
+		display: block;
+		font-size: 2.4rem;
+		margin-bottom: 27px;
+		width: 175px;
+	}
+	div.vertel, div.hortel, div.black1, div.black2 {
+		display: none;
+	}
+	.vertical-phone {
+	    top: -24px;
+        left: 9px;
+    	width: 69%;
+	}
+	.horizontal-phone {
+	    top: 8px;
+	    right: -6px;
+	    width: 69%;
+	}
+	.left {
+	    top: 46vw;
+	    left: 3px;
+	}
+	.right {
+		top: 46vw;
+    	right: -2px;
+	}
+	.slide:active {
+		width: 24px;
+		height: 40px;
+		top: 46vw;
+	}
+	.slide:hover {
+		cursor: pointer;
+		background: #b3b1b1;
+		border-radius: 3px;
+		border: solid #b3b1b1 3px;
+		top: 47vw;
+	}
+	.slider {
+		padding-top: 95px;
+		height: 54vw;
+	}
+	.left-phone {
+		width: 17%;
+		top: 35px;
+		left: 180px;
+	}
+	.main-phone {
+		width: 29%;
+		margin: auto;
+		top: 0px;
+		left: 0;
+		right: 0
+	}
+	.right-phone {
+		width: 17%;
+		top: 35px;
+		right: 180px;
+	}
+	.services {
+		padding-top: 70px;
+    	margin-top: -70px;
+    	height: auto;
+    	border-bottom: 0;
+	}
+	.services h2 {
+    	padding-top: 36px;
+	}
+	.layout-3-colums {
+	    margin-top: -16px;
+	    width: 85vw;
+	    padding-bottom: 0; 
+	}
+	.colums {
+		width: 80vw;
+		margin-bottom: 26px;
+	}
+	.Portfolio {
+	    padding-top: 70px;
+	    margin-top: -70px;
+	}
+	.About-us {
+	    padding-top: 70px;
+	    margin-top: -70px;
+	}
+	.portfolio {
+		padding-top: 13vw;
+		padding-bottom: 0;
+		border: 0;
+		height: auto;
+	}
+	.up-text button {
+	    margin: 17px 7px 0 0;
+	}
+	.colum {
+	    width: 40vw;
+    	height: 34vw;
+	    margin-top: 18px;
+	    margin-right: -6px;
+	}
+	.layout-4-colums {
+		height: 155vw;
+	}
+	.colum:nth-child(1n + 9) {
+		display: none;
+	}
+	.colum img {
+		width: 100%;
+		height: 100%;
+	}
+	.up-text {
+    	height: 212vw;
+	}
+	.about-us {
+	    padding-top: 41px;
+	    border-bottom: 0;
+	    padding-bottom: 11px;
+	}
+	.layout-3-colums1 {
+	    margin-top: -22px;
+	    margin-bottom: 0px;
+	}
+	.column {
+		margin-bottom: 29px;
+	}
+	.column img:first-child {
+		width: 104%;
+	}
+	.column h3 {
+	    margin-top: 19px;
+	}
+	.column p {
+	    margin-top: 2px;
+	}
+	.soc {
+		margin-top: 12px;
+	}
+	.get {
+	    padding-top: 53px;
+	    padding-bottom: 41px;
+	    border-bottom: 0;
+	}
+	.forms {
+		display: block;
+	}
+	.main-form {
+		width: auto;
+		margin-bottom: 52px;
+	}
+	.description {
+	    margin-bottom: 23px;
+	}
+	input, textarea {
+	    width: 105%;
+	    margin-bottom: 12px;
+	    padding: 4px 5px;
+	}
+	textarea {
+	    height: 151px;
+	}
+	.get-a-quote {
+		padding-top: 70px;
+	    margin-top: -70px;
+	}
+	.contact {
+	    margin-left: -2px;
+	}
+	.contact h3 {
+		margin-bottom: 3px;
+	}
+	.contact a, .contact span {
+		line-height: 24px;
+	}
+	.contact p {
+		margin-bottom: 11px;
+	}
+	.foot {
+		justify-content: center;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.foot p {
+		display: none;
+	}
+}
+@media (max-width: 767px) {
+	.up-text {
+	    height: 231vw;
 	}
 }
